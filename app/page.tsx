@@ -1,22 +1,21 @@
 "use client";
 
 import { useEffect } from "react";
-
 import Header from "./components/header/Header";
+import { RootState, store } from "./components/recepty/receptStore";
+import { addRecept } from "./components/recepty/receptSlice";
+import Recept from "./components/recepty/Recept";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import Recepts from "./components/recepty/Recepts";
 
 export default function Home() { 
 
-  useEffect(() => {
-    fetch("https://private-anon-96e21c7737-cookbook3.apiary-mock.com/api/v1/recipes", {
-      method: "GET",
-    }).then(response => response.json().then(body => {
-      console.log(body);
-    }));
-  }, []);
-
   return(
     <div>
-      <Header/>
+      <Provider store={store}>
+        <Header/>
+        <Recepts/>
+      </Provider>
     </div>
   )
 }

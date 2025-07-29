@@ -1,17 +1,20 @@
-interface Recepie {
+interface Recept {
+    id: string,
     name: string,
     stars: number,
-    time: string,
+    time: number,
 }
 
-const Recept = (props: Recepie) => {
-    const { name, stars, time } = props;
+const Recept = (props: Recept) => {
+
+    const {id, name, stars, time} = props;
 
     return(
-        <div>
-            <p>{name}</p>
-            <p>{stars}</p>
-            <p>{time}</p>
+        <div className="text-black">
+            <p>ID: {id}</p>
+            <p>Name: {name}</p>
+            <p>Stars: {stars}</p>
+            <p>Time: {time}</p>
         </div>
     )
 }
