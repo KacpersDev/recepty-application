@@ -1,12 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
-import Header from "./components/header/Header";
-import { RootState, store } from "./components/recepty/receptStore";
-import { addRecept } from "./components/recepty/receptSlice";
-import Recept from "./components/recepty/Recept";
-import { Provider, useDispatch, useSelector } from "react-redux";
-import Recepts from "./components/recepty/Recepts";
+import Header from "./components/main/header/Header";
+import { store } from "./components/main/recepty/receptStore";
+import { Provider } from "react-redux";
+import Recepts from "./components/main/recepty/Recepts";
 
 export default function Home() { 
 
@@ -14,7 +11,9 @@ export default function Home() {
     <div>
       <Provider store={store}>
         <Header/>
-        <Recepts/>
+        <div className="mt-[50px]">
+          <Recepts/>
+        </div>
       </Provider>
     </div>
   )
