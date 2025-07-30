@@ -43,7 +43,7 @@ const Rate = (props: ViewProps) => {
 
     return(
         <div className="bg-[#0000ff] mt-[100px] h-[200px]">
-            <p className="text-center text-white font-poppins_bold text-[25px] pt-[45px]">Ohodnot tento recept</p>
+            <p className="text-center text-white font-poppins_bold text-[25px] pt-[45px]">Ohodnoť tento recept</p>
             {permStars === 0 ? <StarsView/> : <FixStars />}
         </div>
     )

@@ -44,7 +44,7 @@ const Header = (props: HeaderProps) => {
                     src={ArrowIcon} alt="arrow icon"
                     onClick={() => router.back()}
                 />
-                <p className="text-[18px] font-poppins_bold">Pridat recept</p>
+                <p className="text-[18px] font-poppins_bold">Přidat recept</p>
             </div>
             <div>
                 <Image 
