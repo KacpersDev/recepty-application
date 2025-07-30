@@ -42,7 +42,7 @@ const Header = (props: HeaderProps) => {
                 <Image 
                     className="w-[32px] hover:cursor-pointer hover:opacity-75" 
                     src={ArrowIcon} alt="arrow icon"
-                    onClick={() => router.back()}
+                    onClick={() => router.push('/')}
                 />
                 <p className="text-[18px] font-poppins_bold">Přidat recept</p>
             </div>

@@ -9,21 +9,16 @@ import Recept from "./Recept";
 
 const Recepts = () => {
     const recepty = useSelector((state: RootState) => state.recept.recepty);
-    const rendered = useRef(false);
+    let rendered = false;
 
     useEffect(() => {
-        if (rendered.current) return;
-        rendered.current = true;
-
-        const abortController = new AbortController();
 
         const fetchRecipes = async () => {
             try {
                 const response = await fetch("https://private-anon-96e21c7737-cookbook3.apiary-mock.com/api/v1/recipes", {
                     method: "GET",
-                    signal: abortController.signal,
                 });
-
+            
                 const json = await response.json();
                 for (const bodyRecord of json) {
                     store.dispatch(addRecept({
@@ -33,19 +28,12 @@ const Recepts = () => {
                         time: bodyRecord.duration,
                     }));
                 }
-
             } catch (err) {
-                
+                console.error(err);
             }
         }
 
         fetchRecipes();
-
-        return () => {
-            if (!abortController.signal.aborted) {
-                abortController.abort();
-            }
-        };
     }, []);
 
     return(
