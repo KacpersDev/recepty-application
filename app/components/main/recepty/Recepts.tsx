@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { addRecept } from "./receptSlice";
 import { RootState, store } from "./receptStore";
@@ -9,9 +9,11 @@ import Recept from "./Recept";
 
 const Recepts = () => {
     const recepty = useSelector((state: RootState) => state.recept.recepty);
-    let rendered = false;
 
     useEffect(() => {
+        if (recepty.length > 0) {
+            return;
+        }
 
         const fetchRecipes = async () => {
             try {
@@ -34,7 +36,7 @@ const Recepts = () => {
         }
 
         fetchRecipes();
-    }, []);
+    }, [recepty.length]);
 
     return(
         recepty.map((recept) => {
