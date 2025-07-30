@@ -14,15 +14,13 @@ const Star = (props: Props) => {
     const { stars, star, setStars, permStars, setPermStars, id } = props;
 
     const handleRate = async () => {
-        const response = await fetch(`https://private-anon-96e21c7737-cookbook3.apiary-mock.com/api/v1/recipes/${id}/ratings`, {
+        await fetch(`https://private-anon-96e21c7737-cookbook3.apiary-mock.com/api/v1/recipes/${id}/ratings`, {
             method: "POST",
             body: JSON.stringify({"score": permStars}),
             headers: {
                 'Content-Type': 'application/json',
             }
         });
-
-        const json = await response.json(); 
     }
 
     if (permStars === 0) {

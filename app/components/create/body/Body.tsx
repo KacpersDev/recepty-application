@@ -1,4 +1,6 @@
 import BodyInput from "./BodyInput";
+import Image from "next/image";
+import PlusPurple from "@/app/assets/images/plus-purple.png";
 import {useState, SetStateAction, Dispatch} from "react";
 
 interface BodyProps {
@@ -28,8 +30,11 @@ const Body = (props: BodyProps) => {
                             }}/>
                         ))}
                     </div>
-                    <button className="w-[100px] h-[35px] mt-[35px] border-1 border-[#ff00ff] text-[#ff00ff] rounded-lg font-poppins_bold text-[15px] hover:cursor-pointer hover:opacity-75"
-                            onClick={() => setClicks(clicks + 1)}>PRIDAT</button>
+                    <div className="border-2 border-[#ff00ff] flex justify-center space-x-[10px] w-[100px] h-[35px] rounded-lg mt-[15px] hover:cursor-pointer hover:opacity-75" 
+                            onClick={() => setClicks(clicks + 1)}>
+                        <Image src={PlusPurple} alt="purple plus" className="w-[16px] h-[16px] mt-[7px]"/>
+                        <p className="text-[#ff00ff] font-poppins_bold text-[15px] mt-[5px]">PRIDAT</p>
+                    </div>
                 </div>
                 <BodyInput placeholder="Postup" onChange={(event) => setGuide(event.target.value)}/>
                 <BodyInput placeholder="Cas" onChange={(event) => setTime(event.target.value)}/>

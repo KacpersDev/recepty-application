@@ -19,12 +19,12 @@ const Stars = (props: Props) => {
     const { stars, time } = props;
 
     return(
-        <div className="flex justify-center bg-[#ff00ff] space-x-[400px] h-[50px]">
-            <div>
+        <div className="flex justify-center bg-[#ff00ff] space-x-[400px] h-[70px]">
+            <div className="mt-[12px]">
                 {renderStars(stars)}
             </div>
             <div>
-                <p className="text-white text-[15px] mt-[12px] font-poppins_bold">{time} min.</p>
+                <p className="text-white text-[15px] mt-[24px] font-poppins_bold">{time} min.</p>
             </div>
         </div>
     )

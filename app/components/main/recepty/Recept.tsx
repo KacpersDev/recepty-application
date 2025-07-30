@@ -32,13 +32,13 @@ const Recept = (props: Recept) => {
                 <div>
                     <Image className="w-[120px] rounded-xl" src={ReceptIcon} alt="recept-icon"/>
                 </div>
-                <div>
+                <div className="grid justify-center w-[300px]">
                     <p className="text-[#0000ff] font-poppins_bold text-[25px]">{name}</p>
                     {renderStars(stars)}
                     <p className="mt-[5px] text-[20px]">🕔 {time} min.</p>
                 </div>
             </div>
-            <div className="ml-auto mr-auto bg-slate-200 w-[500px] h-[1px] mt-[25px]"/>
+            <div className="ml-auto mr-auto bg-slate-200 w-[550px] h-[1px] mt-[25px]"/>
         </div>
     )
 }
