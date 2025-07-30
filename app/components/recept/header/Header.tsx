@@ -17,7 +17,7 @@ const Header = (props: Props) => {
 
     return(
         <div>
-            <div className="flex justify-center space-x-[320px] mt-[15px] mb-[15px]">
+            <div className="flex justify-center space-x-[320px] mt-[15px] mb-[15px] max-[620px]:space-x-[100px] max-[370px]:space-x-[50px]">
                 <div>
                     <Image className="w-[32px] hover:cursor-pointer" src={Arrow} alt="arrow" onClick={() => router.back()}/>
                     <Image className="w-[100px] ml-auto mr-auto mt-[10px]" src={ReceptIcon} alt="recept icon"/>

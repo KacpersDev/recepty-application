@@ -37,7 +37,7 @@ const Header = (props: HeaderProps) => {
     }
 
     return(
-        <div className="flex justify-center font-poppins space-x-[560px] mt-[25px]">
+        <div className="flex justify-center font-poppins space-x-[560px] mt-[25px] max-[800px]:space-x-[430px] max-[630px]:space-x-[300px] max-[500px]:space-x-[100px]">
             <div className="flex space-x-[30px]">
                 <Image 
                     className="w-[32px] hover:cursor-pointer hover:opacity-75" 

@@ -23,7 +23,7 @@ const Body = (props: BodyProps) => {
                 <BodyInput placeholder="Název receptu" onChange={(event) => setName(event.target.value)}/>
                 <BodyInput placeholder="Úvodní text" onChange={(event) => setText(event.target.value)}/>
                 <div className="grid justify-center">
-                    <p className="text-center mr-[650px] mt-[50px] font-poppins_bold text-[#0000ff]">INGREDIENCE</p>
+                    <p className="text-center mr-[650px] mt-[50px] font-poppins_bold text-[#0000ff] max-[800px]:mr-[400px] max-[500px]:mr-[200px]">INGREDIENCE</p>
                     <div className="grid justify-center">
                         {[...Array(clicks)].map((_, index) => (
                             <BodyInput key={index} placeholder="Váše ingredience" onChange={(event) => {

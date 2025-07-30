@@ -9,7 +9,7 @@ const Header = () => {
     const router = useRouter();
 
     return(
-        <div className="flex justify-center font-poppins space-x-[700px] mt-[25px]">
+        <div className="flex justify-center font-poppins space-x-[700px] mt-[25px] max-[800px]:space-x-[430px] max-[550px]:space-x-[300px] max-[400px]:space-x-[100px]">
             <p className="text-[18px] font-poppins_bold">Recepty</p>
             <Image 
                 className="w-[24px] h-[24px] hover:cursor-pointer hover:opacity-75" 

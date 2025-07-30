@@ -7,7 +7,7 @@ const renderStars = (stars: number) => {
     if (stars === 0 || stars === 5) {
         return <p className={stars === 0 ? "text-white opacity-30 text-[30px]" : "text-white text-[30px]"}>★★★★★</p>
     }
-    
+
     return (
         <p className="text-white text-[30px]">{"★".repeat(stars)}
             <span className="text-white opacity-30">{"★".repeat(5 - stars)}</span>
@@ -20,7 +20,7 @@ const Stars = (props: Props) => {
     const { stars, time } = props;
 
     return(
-        <div className="flex justify-center bg-[#ff00ff] space-x-[400px] h-[70px]">
+        <div className="flex justify-center bg-[#ff00ff] space-x-[400px] h-[70px] max-[620px]:space-x-[170px] max-[430px]:space-x-[120px] max-[370px]:space-x-[50px]">
             <div className="mt-[12px]">
                 {renderStars(stars)}
             </div>
