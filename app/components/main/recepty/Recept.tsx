@@ -1,7 +1,9 @@
 "use client";
+
+import { useRouter } from "next/navigation";
+
 import Image from "next/image"
 import ReceptIcon from "@/app/assets/images/recept-icon.png";
-import {useRouter} from "next/navigation";
 
 interface Recept {
     id: string,
@@ -14,6 +16,7 @@ const renderStars = (stars: number) => {
     if (stars === 0 || stars === 5) {
         return <p className={stars === 0 ? "text-slate-400" : "text-[#ff00ff]"}>★★★★★</p>
     }
+
     return (
         <p className="text-[#ff00ff]">{"★".repeat(stars)}
             <span className="text-slate-400">{"★".repeat(5 - stars)}</span>

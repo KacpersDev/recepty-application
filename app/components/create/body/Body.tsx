@@ -1,7 +1,8 @@
+import { useState, SetStateAction, Dispatch } from "react";
+
 import BodyInput from "./BodyInput";
 import Image from "next/image";
 import PlusPurple from "@/app/assets/images/plus-purple.png";
-import {useState, SetStateAction, Dispatch} from "react";
 
 interface BodyProps {
     setName: Dispatch<SetStateAction<string>>,

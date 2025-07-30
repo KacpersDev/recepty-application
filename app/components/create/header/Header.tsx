@@ -1,10 +1,11 @@
 "use client";
+
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 
 import PlusIcon from "@/app/assets/images/plus.png";
 import ArrowIcon from "@/app/assets/images/arrow.png";
-
-import { useRouter } from "next/navigation";
 
 interface HeaderProps {
     name: string,
@@ -20,7 +21,7 @@ const Header = (props: HeaderProps) => {
     const router = useRouter();
 
     const handleSubmit = async () => {
-        const response = await fetch("https://private-anon-e551961e9a-cookbook3.apiary-mock.com/api/v1/recipes", {
+        await fetch("https://private-anon-e551961e9a-cookbook3.apiary-mock.com/api/v1/recipes", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -33,9 +34,6 @@ const Header = (props: HeaderProps) => {
                 ingredients: Array.from(map.values()),
             })
         });
-
-        const json = await response.json();
-        console.log(json);
     }
 
     return(

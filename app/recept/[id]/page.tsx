@@ -1,7 +1,7 @@
 "use client";
 
-import {useParams} from "next/navigation";
-import {useEffect, useState} from "react";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import Header from "@/app/components/recept/header/Header";
 import Stars from "@/app/components/recept/stars/Stars";
@@ -23,8 +23,6 @@ export default function Home() {
         const fetchRecept = async () => {
             const response = await fetch(`https://private-anon-96e21c7737-cookbook3.apiary-mock.com/api/v1/recipes/${params.id}`);
             const json = await response.json();
-
-            console.log(json);
 
             setName(json.name);
             setDescription(json.description);

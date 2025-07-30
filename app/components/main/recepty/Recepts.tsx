@@ -50,7 +50,6 @@ const Recepts = () => {
 
     return(
         recepty.map((recept) => {
-            console.log(recept.id);
             return(
                 <Recept 
                     key={recept.name}

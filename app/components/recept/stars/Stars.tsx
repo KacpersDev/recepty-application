@@ -7,6 +7,7 @@ const renderStars = (stars: number) => {
     if (stars === 0 || stars === 5) {
         return <p className={stars === 0 ? "text-white opacity-30 text-[30px]" : "text-white text-[30px]"}>★★★★★</p>
     }
+    
     return (
         <p className="text-white text-[30px]">{"★".repeat(stars)}
             <span className="text-white opacity-30">{"★".repeat(5 - stars)}</span>

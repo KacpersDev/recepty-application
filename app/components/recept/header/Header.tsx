@@ -1,8 +1,10 @@
 "use client";
+
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import ReceptIcon from "@/app/assets/images/recept-icon.png";
 import Arrow from "@/app/assets/images/arrow.png";
-import { useRouter } from "next/navigation";
 
 interface Props {
     name: string;
