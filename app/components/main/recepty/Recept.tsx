@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image"
 import ReceptIcon from "@/app/assets/images/recept-icon.png";
+import {useRouter} from "next/navigation";
 
 interface Recept {
     id: string,
@@ -22,9 +24,10 @@ const renderStars = (stars: number) => {
 const Recept = (props: Recept) => {
 
     const {id, name, stars, time} = props;
+    const router = useRouter();
 
     return(
-        <div className="font-poppins">
+        <div className="font-poppins hover:cursor-pointer" onClick={() => router.push('/recept/' + id)}>
            <div className="flex justify-center space-x-[100px] mt-[25px]">
                 <div>
                     <Image className="w-[120px] rounded-xl" src={ReceptIcon} alt="recept-icon"/>

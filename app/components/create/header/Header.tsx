@@ -5,12 +5,38 @@ import PlusIcon from "@/app/assets/images/plus.png";
 import ArrowIcon from "@/app/assets/images/arrow.png";
 
 import { useRouter } from "next/navigation";
-import HeaderProps from "./HeaderProps";
+
+interface HeaderProps {
+    name: string,
+    text: string,
+    guide: string,
+    time: string,
+    map: Map<number, string>,
+}
 
 const Header = (props: HeaderProps) => {
 
-    const { clicked, setClicked } = props;
+    const { name, text, guide, time, map } = props;
     const router = useRouter();
+
+    const handleSubmit = async () => {
+        const response = await fetch("https://private-anon-e551961e9a-cookbook3.apiary-mock.com/api/v1/recipes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: name,
+                description: text,
+                info: guide,
+                duration: time,
+                ingredients: Array.from(map.values()),
+            })
+        });
+
+        const json = await response.json();
+        console.log(json);
+    }
 
     return(
         <div className="flex justify-center font-poppins space-x-[560px] mt-[25px]">
@@ -27,7 +53,10 @@ const Header = (props: HeaderProps) => {
                     className="w-[24px] h-[24px] hover:cursor-pointer hover:opacity-75" 
                     src={PlusIcon} 
                     alt="plus icon"
-                    onClick={() => setClicked(true)}
+                    onClick={() => {
+                        alert("worked " + name);
+                        handleSubmit();
+                    }}
                 />
             </div>
         </div>

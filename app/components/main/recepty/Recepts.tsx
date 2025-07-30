@@ -26,6 +26,7 @@ const Recepts = () => {
 
                 const json = await response.json();
                 for (const bodyRecord of json) {
+                    console.log(bodyRecord);
                     store.dispatch(addRecept({
                         id: bodyRecord.id,
                         name: bodyRecord.name,
