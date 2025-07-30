@@ -2,6 +2,10 @@
 import {useParams} from "next/navigation";
 import {useEffect, useState} from "react";
 
+import Stars from "@/app/components/recept/stars/Stars";
+import Body from "@/app/components/recept/body/Body";
+import Rate from "@/app/components/recept/rate/Rate";
+
 export default function Home() {
 
     const params = useParams<{id: string}>();
@@ -31,10 +35,9 @@ export default function Home() {
 
     return(
         <div>
-            <p>ID {params.id}</p>
+            <Stars stars={score} time={time}/>
+            <Body description={description} ingrediences={ingredients} info={info}/>
+            <Rate id={params.id}/>
         </div>
     )
 }
-/*
-
- */
